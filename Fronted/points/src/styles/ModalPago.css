@@ -1,0 +1,80 @@
+/* ModalPago.css */
+.modal-pago {
+  background: #f9f9f9;
+  border-radius: 18px;
+  padding: 30px 25px;
+  width: 350px;
+  max-width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: aparecer 0.25s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-pago h3 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.modal-pago p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.modal-pago input,
+.modal-pago select {
+  padding: 10px 1px;
+  border: none;
+  color: #333;
+  border-radius: 10px;
+  background: #ececec;
+  box-shadow: inset 3px 3px 5px rgba(0,0,0,0.05),
+              inset -2px -2px 4px rgba(255,255,255,0.7);
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.modal-pago input:focus,
+.modal-pago select:focus {
+  outline: none;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #add8e6;
+}
+
+.modal-pago-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal-pago button {
+  padding: 10px 20px;
+  border: none;
+  color: #333;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1),
+              -2px -2px 5px rgba(255,255,255,0.7);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-pago button:hover {
+  background-color: #dceeff;
+}
+
+.modal-pago button:active {
+  transform: scale(0.97);
+}

@@ -1,0 +1,113 @@
+/* loginForm.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ajustamos form-wrapper para que tome el fondo de acuerdo al tema */
+.form-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Fondo por defecto */
+  background-color: #7ef6ff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: 1;
+}
+
+/* Cambios de fondo según tema, usando el selector que apunta al body */
+body.tema-dia .form-wrapper {
+  background-image: url('/src/img/alberca_dia.jpg');
+}
+
+body.tema-tarde .form-wrapper {
+  background-image: url('/src/img/alberca_atardecer.jpg');
+}
+
+body.tema-noche .form-wrapper {
+  background-image: url('/src/img/alberca_noche.avif');
+}
+
+/* Neumorphic card con fondo semitransparente para que el formulario destaque */
+.neumorphic-card {
+  background: #f5f8fa;
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  backdrop-filter: blur(10px); /* para difuminar el fondo detrás del formulario */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* resto igual */
+h1 {
+  color: #003b9a;
+  margin-bottom: 20px;
+}
+
+.neumorphic-input {
+  padding: 15px;
+  width: 80%;
+  font-size: 16px;
+  color: #070707;
+  border: none;
+  outline: none;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  background: #e0e5ec;
+  box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
+}
+
+.neumorphic-input::placeholder {
+  color: #a3b1c6;
+}
+
+.neumorphic-button {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #012d74;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #f5f8fa;
+  box-shadow: 5px 5px 10px #838e9d, -5px -5px 10px #d9dadc;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-button:active {
+  box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
+}
+
+.mensaje {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #ffe0b2;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #6e4b00;
+  box-shadow: 2px 2px 5px #d3c0a3;
+}
+
+/* Botón para volver al inicio */
+.volver-btn {
+  margin-top: 15px;
+  background: #f5ffff;
+  color: #56008b;
+  box-shadow: 5px 5px 10px #b9b9b9, -5px -5px 10px #ffffff;
+}
+
+.volver-btn:active {
+  box-shadow: inset 5px 5px 10px #b9b9b9, inset -5px -5px 10px #ffffff;
+}

@@ -1,0 +1,105 @@
+
+
+body.tema-dia .registro-trabajador .form-wrapper {
+  background-image: url('/src/img/alberca_dia.jpg');
+}
+body.tema-tarde .registro-trabajador .form-wrapper {
+  background-image: url('/src/img/alberca_tarde.jpg');
+}
+body.tema-noche .registro-trabajador .form-wrapper {
+  background-image: url('/src/img/alberca_noche.avif');
+}
+
+/* Tarjeta */
+.registro-trabajador .neumorphic-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.registro-trabajador .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.registro-trabajador .neumorphic-input,
+  input[type="file"],
+  select {
+  padding: 15px;
+  font-size: 15px;
+  color: #3d444e;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff;
+  /* ... */
+}
+
+.registro-trabajador .neumorphic-button,
+.registro-trabajador .button-regresar {
+  padding: 15px 25px;
+  font-size: 15px;
+  color: #058541;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #f5f8f8;
+  box-shadow: 2px 2px 6px #8b9e91, -2px -2px 6px #ffffff;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin: 10px auto;
+  display: block;
+  /* ... */
+}
+
+.registro-trabajador .mensaje {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  box-shadow: 2px 2px 5px #d3c0a3;
+  text-align: center;
+
+}
+
+.registro-trabajador .notificacion-flotante {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e0f8e9;
+  color: #2e7d32;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: inset 5px 5px 10px #c7dcd1,
+              inset -5px -5px 10px #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+  z-index: 999;
+  transition: opacity 0.4s ease-in-out;
+  animation: fadeInOut 2s ease forwards;
+
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .registro-trabajador .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registro-trabajador .neumorphic-card {
+    width: 90vw;
+  }
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

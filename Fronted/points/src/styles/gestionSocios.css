@@ -1,0 +1,189 @@
+/* Contenedor principal */
+.gestion-socios-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* Temas */
+body.tema-dia .gestion-socios-wrapper {
+  background-image: url('/src/img/alberca_dia.jpg');
+}
+
+body.tema-tarde .gestion-socios-wrapper {
+  background-image: url('/src/img/alberca_atardecer.jpg');
+}
+
+body.tema-noche .gestion-socios-wrapper {
+  background-image: url('/src/img/alberca_noche.avif');
+}
+
+/* Contenedor del contenido */
+.gestion-socios-container {
+  background: rgba(224, 229, 236, 0.9);
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px rgba(163, 177, 198, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  max-width: 1100px;
+  width: 95%;
+  max-height: 90vh;
+  overflow: auto;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.gestion-socios-container h2 {
+  color: #6d7582;
+  margin-bottom: 20px;
+}
+
+/* Filtros */
+.gestion-socios-container input,
+.gestion-socios-container select {
+  padding: 10px;
+  margin: 0 5px 15px;
+  border-radius: 12px;
+  border: none;
+  background: #e0e5ec;
+  color: #6d7582;
+  box-shadow: inset 2px 2px 4px #a3b1c6, inset -2px -2px 4px #ffffff;
+}
+
+.gestion-socios-container button {
+  padding: 10px 18px;
+  margin: 0 5px;
+  border-radius: 12px;
+  border: none;
+  background: #e0e5ec;
+  color: #6d7582;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #a3b1c6, -3px -3px 6px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.gestion-socios-container button:hover {
+  background-color: #d6e0f0;
+  transform: scale(1.05);
+}
+
+.gestion-socios-container button:active {
+  box-shadow: inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff;
+}
+
+/* Tabla */
+.gestion-socios-tabla-scrollable {
+  overflow-x: auto;
+  margin-top: 15px;
+  max-height: 60vh;
+  position: relative;
+}
+
+.gestion-socios-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+  margin: 10px 0;
+  background: #f4f6f9;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+}
+
+.gestion-socios-table th, 
+.gestion-socios-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  color: #444;
+}
+
+.gestion-socios-table th {
+  background: #e0e5ec;
+  color: #6d7582;
+}
+
+.gestion-socios-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #e0e5ec;
+}
+
+.gestion-socios-table thead th {
+  position: sticky;
+  top: 0;
+  background: #e0e5ec;
+  z-index: 5;
+}
+
+.gestion-socios-table td img {
+  max-width: 50px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px #ccc;
+}
+
+/* Botones de acción */
+.gestion-socios-table .gestion-socios-boton-accion {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  margin: 4px 2px;
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #a3b1c6, -2px -2px 4px #ffffff;
+  background-color: #e0e5ec;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+/*estilos para el modal */
+.modal-fondo {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-contenido {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-contenido input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+

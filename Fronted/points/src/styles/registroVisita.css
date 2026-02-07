@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Fondo contenedor exclusivo para visitas */
+.visita-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 💯 Centrado real */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+
+/* Fondo según hora (reutiliza clases del body) */
+body.tema-dia .visita-wrapper {
+  background-image: url('/src/img/alberca_dia.jpg');
+}
+body.tema-tarde .visita-wrapper {
+  background-image: url('/src/img/alberca_atardecer.jpg');
+}
+body.tema-noche .visita-wrapper {
+  background-image: url('/src/img/alberca_noche.avif');
+}
+
+/* Tarjeta */
+.visita-card {
+  background: white;
+  border-radius: 15px;
+  padding: 60px;
+  width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Título */
+.visita-card h2 {
+  color: #0c2244;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Inputs */
+.visita-input,
+.visita-card textarea {
+  padding: 15px;
+  font-size: 15px;
+  color: #3d444e;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff;
+  margin-bottom: 15px;
+}
+
+.visita-input::placeholder,
+.visita-card textarea::placeholder {
+  color: #a3b1c6;
+}
+
+/* Botones */
+.visita-button,
+.visita-regresar {
+  padding: 15px 25px;
+  font-size: 15px;
+  color: #058541;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #f5f8f8;
+  box-shadow: 2px 2px 6px #8b9e91, -2px -2px 6px #ffffff;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin: 10px auto;
+  display: block;
+}
+
+.visita-button:hover,
+.visita-regresar:hover {
+  background-color: #83d3fe;
+  transform: scale(1.05);
+}
+
+.visita-button:active,
+.visita-regresar:active {
+  box-shadow: inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff;
+}
+
+/* Mensajes */
+.visita-mensaje {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  box-shadow: 2px 2px 5px #d3c0a3;
+  text-align: center;
+}
+
+.visita-mensaje.exito {
+  background: #d4edda;
+  color: #155724;
+}
+
+.visita-mensaje.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .visita-card {
+    width: 90vw;
+    padding: 30px;
+  }
+}

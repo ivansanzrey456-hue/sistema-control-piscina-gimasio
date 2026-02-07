@@ -1,0 +1,251 @@
+/* Contenedor principal */
+.bienvenida-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Partículas animadas */
+.bienvenida-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bienvenida-particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  left: var(--left);
+  top: var(--top);
+  animation: bienvenida-floatParticle var(--duration) infinite ease-in-out;
+  animation-delay: var(--delay);
+}
+
+@keyframes bienvenida-floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-30px) translateX(15px) rotate(5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-15px) translateX(-15px) rotate(10deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(20px) translateX(10px) rotate(5deg);
+    opacity: 0.9;
+  }
+}
+
+/* Tarjeta principal */
+.bienvenida-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 60px 50px;
+  text-align: center;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  max-width: 550px;
+  width: 90%;
+  backdrop-filter: blur(20px);
+  transform: translateY(50px) scale(0.9);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bienvenida-card.bienvenida-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Logo */
+.bienvenida-logo {
+  font-size: 80px;
+  margin-bottom: 25px;
+  display: inline-block;
+  animation: bienvenida-logoPulse 2s infinite ease-in-out;
+  filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.4));
+}
+
+@keyframes bienvenida-logoPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.4));
+  }
+  25% {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 8px 20px rgba(102, 126, 234, 0.6));
+  }
+  50% {
+    transform: scale(0.95) rotate(-3deg);
+    filter: drop-shadow(0 6px 18px rgba(102, 126, 234, 0.5));
+  }
+  75% {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 7px 19px rgba(102, 126, 234, 0.55));
+  }
+}
+
+/* Título */
+.bienvenida-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2d3748;
+  margin: 0 0 25px 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.bienvenida-visible .bienvenida-title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Texto */
+.bienvenida-text {
+  font-size: 1.3rem;
+  color: #4a5568;
+  margin: 0 0 40px 0;
+  line-height: 1.6;
+  font-weight: 400;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.bienvenida-visible .bienvenida-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Botón */
+.bienvenida-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  transform: translateY(0) scale(1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.8s ease-out 0.6s, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bienvenida-visible .bienvenida-button {
+  opacity: 1;
+}
+
+.bienvenida-button-hover {
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4) !important;
+}
+
+.bienvenida-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.bienvenida-button:hover::before {
+  left: 100%;
+}
+
+/* Flecha del botón */
+.bienvenida-arrow {
+  transition: transform 0.3s ease;
+}
+
+.bienvenida-button:hover .bienvenida-arrow {
+  transform: translateX(8px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bienvenida-card {
+    padding: 40px 30px;
+  }
+  
+  .bienvenida-logo {
+    font-size: 60px;
+  }
+  
+  .bienvenida-title {
+    font-size: 2.2rem;
+  }
+  
+  .bienvenida-text {
+    font-size: 1.1rem;
+  }
+  
+  .bienvenida-button {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bienvenida-card {
+    padding: 30px 20px;
+  }
+  
+  .bienvenida-title {
+    font-size: 1.8rem;
+  }
+  
+  .bienvenida-text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .bienvenida-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mejora de rendimiento para animaciones */
+.bienvenida-container * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
