@@ -1,9 +1,6 @@
 # Sistema de Control de Accesos y Membresías
 
 Sistema web para el control de entradas y salidas, gestión de socios, pagos diarios y membresías.
-
-Proyecto desarrollado como parte de portafolio personal.
-
 ---
 
 ## 🧩 Tecnologías utilizadas
