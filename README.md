@@ -36,6 +36,9 @@ El proyecto cuenta con un **modo demo** para visualizar la interfaz sin conexió
 > ⚠️ En modo demo no se realizan operaciones reales sobre la base de datos.
 
 ---
+## 📷capturas de pantalla
+
+
 
 ## 🗄️ Base de datos
 
